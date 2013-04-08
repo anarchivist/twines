@@ -623,7 +623,7 @@ sg29
 (lp196
 sbsa(dp197
 g12
-I01
+I00
 sg13
 (lp198
 F3015.0
@@ -734,7 +734,7 @@ sg29
 (lp229
 sbsa(dp230
 g12
-I00
+I01
 sg13
 (lp231
 F1925.0
@@ -745,7 +745,7 @@ Tiddler
 p232
 (dp233
 g18
-VThe word "amateur" stings. You so desperately want to identify with your people. But calling yourself anything other than what people can see on a daily basis feels like you're living lie of the worst kind.\u000a\u000aNo amount of pins, patches, bumper stickers, or any other signifiers can make you feel like any less of an amateur when it comes to who you've dated, slept with, flirted with, or even stolen a kiss from.\u000a\u000aYou feel shameful of your [[failures]].
+VThe word "amateur" stings. You so desperately want to identify with your people. But calling yourself anything other than what people can see on a daily basis feels like you're living lies of the worst kind.\u000a\u000aNo amount of pins, patches, bumper stickers, or any other signifiers can make you feel like any less of an amateur when it comes to who you've dated, slept with, flirted with, or even stolen a kiss from.\u000a\u000aYou feel shameful of your [[failures]].
 p234
 sg20
 g21
@@ -1523,5 +1523,5 @@ p470
 (lp471
 sbsasS'scale'
 p472
-F0.20000000000000007
+F0.60000000000000009
 ss.
