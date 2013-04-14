@@ -5,7 +5,7 @@ V/Users/mam54/Documents/Code/git/shibejam/index.html
 p2
 sS'saveDestination'
 p3
-V/Users/mam54/Documents/Code/git/shibejam/shibejam.tws
+V/Users/mam54/Documents/Code/git/matienzo.org-twine/shibejam/shibejam.tws
 p4
 sS'target'
 p5
@@ -549,7 +549,7 @@ VBOOKCASE
 p174
 sbsa(dp175
 g12
-I00
+I01
 sg13
 (lp176
 F1270.0
@@ -560,7 +560,7 @@ Tiddler
 p177
 (dp178
 g18
-Vthe FOUR-POSTER BED has a down comforter on it and seems very warm and inviting\u000a\u000a<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>\u000a\u000ayou want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking\u000a\u000a<<display "BARKING">><<if $step gte 15>>\u000a<<display "BARKING">><<endif>>\u000a\u000ayou consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>>\u000a\u000a<<set $step = $step + 1>>\u000a[[&laquo; back|BEDROOM]]\u000a
+Vthe FOUR-POSTER BED has a down comforter on it and seems very warm and inviting\u000a\u000a<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>\u000a\u000ayou want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking\u000a\u000a<<display "BARKING">><<if $step gte 15>>\u000a<<display "BARKING">><<endif>>\u000a\u000a<<if $inv.indexOf("CLUMP OF FUR") gte 0>>\u000ayou consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>\u000a\u000a<<set $step = $step + 1>>\u000a[[&laquo; back|BEDROOM]]\u000a
 p179
 sg20
 (lp180
@@ -1106,5 +1106,5 @@ VStoryAuthor
 p340
 sbsasS'scale'
 p341
-F0.4000000000000001
+F0.6000000000000001
 ss.
