@@ -261,46 +261,6 @@ got SHIBE TREATS<<endif>>
 
 
 
-:: FOUR-POSTER BED
-the FOUR-POSTER BED has a down comforter on it and seems very warm and inviting
-
-<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>
-
-you want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-
-<<if $inv.indexOf("CLUMP OF FUR") gte 0>>
-you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>
-
-<<set $step = $step + 1>>
-[[&laquo; back|BEDROOM]]
-
-
-
-:: SLEEP
-you try to sleep
-
-<<if $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow
-
-[[&laquo; back|FOUR-POSTER BED]]<<else>>
-<<if $furinears>>
-you drift off into a deep slumber
-
-<<timedreplace 8>>wow ~ such dreams<<endtimedreplace>>
-
-<<timedgoto "SHIBE ALERT" 20>><<else>>
-<<timedreplace 7>>you can't fall asleep, you hear barking 
-<<display "BARKING">>
-[[&laquo; back|FOUR-POSTER BED]]
-<<endtimedreplace>>
-<<endif>>
-<<endif>>
-<<set $step = $step + 1>>
-
-
-
 :: USE SHIBE TREATS
 you open the bag of SHIBE TREATS and toss some down to the SHIBE
 
@@ -343,14 +303,60 @@ got CLUMP OF FUR<<endif>>
 
 
 
-:: CLUMP OF FUR IN YOUR EARS
-<<set $furinears = true>>
-wow ~ such jeanious
+:: BEDROOM
+you are inside the BEDROOM. there is a [[FOUR-POSTER BED]] here missing pillows
 
-you put the fur in your ears like a champ!
+you are very tired, but you know that it will be very uncomfortable without pillows 
 
-<<set step = $step + 1>>
-[[&laquo; back|FOUR-POSTER BED]]	
+<<if (not $furinears)>>you hear barking
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<if $step gte 30>>
+
+you are so tired but can't sleep because of the barking<<endif>>
+<<endif>><<endif>>
+<<set $step = $step + 1>>
+
+[[&laquo; back|HOUSE]]
+
+
+:: FOUR-POSTER BED
+the FOUR-POSTER BED has a down comforter on it and seems very warm and inviting
+
+<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>
+
+you want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<endif>>
+
+<<if $inv.indexOf("CLUMP OF FUR") gte 0>>
+you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>
+
+<<set $step = $step + 1>>
+[[&laquo; back|BEDROOM]]
+
+
+
+:: SLEEP
+you try to sleep
+
+<<if $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow
+
+[[&laquo; back|FOUR-POSTER BED]]<<else>>
+<<if $furinears>>
+you drift off into a deep slumber
+
+<<timedreplace 8>>wow ~ such dreams<<endtimedreplace>>
+
+<<timedgoto "SHIBE ALERT" 20>><<else>>
+<<timedreplace 7>>you can't fall asleep, you hear barking 
+<<display "BARKING">>
+[[&laquo; back|FOUR-POSTER BED]]
+<<endtimedreplace>>
+<<endif>>
+<<endif>>
+<<set $step = $step + 1>>
 
 
 
@@ -384,16 +390,6 @@ as you faint you realize OH NO this was a WERESHIBE; you are doomed to live thro
 
 
 
-:: READ BOOK ABOUT SHIBES
-you open the BOOK ABOUT SHIBES and read the SHIBE EMERGENCY SECTION
-
-FIRST DON'T GIVE THEM TREATS, THEY WILL GET ANGRY
-SECOND, DON'T RUN!
-THIRD, HAPPY SHIBES ARE MADE BY PILLOW FIGHTS!
-
-[[&laquo; back|SHIBE ALERT]]
-
-
 :: PILLOWS
 you look at the PILLOWS
 
@@ -404,6 +400,85 @@ you choose the fluffiest pillow that is not covered in fur
 got FLUFFY PILLOW<<endif>>
 
 [[&laquo; back|LOVE SEAT]]
+<<set $step = $step + 1>>
+
+
+
+:: PILLOW FIGHT THE SHIBE
+you pick up your FLUFFY PILLOW and swing it playfully at the SHIBE
+
+the SHIBE is shocked but starts pawing at the air playfully
+
+you have turned the FEROCIOUS SHIBE into a HAPPY SHIBE
+
+[img[http://farm8.staticflickr.com/7209/6857647894_f93da891a6.jpg]]
+
+the HAPPY SHIBE tries to kiss you
+
+[[KISSES]]
+[[NO KISSES]]
+
+
+:: READ BOOK ABOUT SHIBES
+you open the BOOK ABOUT SHIBES and read the SHIBE EMERGENCY SECTION
+
+FIRST DON'T GIVE THEM TREATS, THEY WILL GET ANGRY
+SECOND, DON'T RUN!
+THIRD, HAPPY SHIBES ARE MADE BY PILLOW FIGHTS!
+
+[[&laquo; back|SHIBE ALERT]]
+
+
+:: CREDITS
+! BEWAR OF SHIBE
+!! by [[Mx A. Matienzo|http://twitter.com/anarchivist]]
+
+written APRIL 2013 for 1st International Shibe Twine Jam
+
+CLUMP OF FUR picture by [[derfian|http://www.flickr.com/photos/derfian/3121296634]]
+
+PILLOWS picture by [[BarbaraLN|http://www.flickr.com/photos/46097950@N02/6248462654/]]
+
+TREATS picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/5135098566/]]
+
+FEROCIOUS SHIBE picture by [[Alaskan pup|http://www.flickr.com/photos/sandy_01/8121414926/]]
+
+HAPPY SHIBE picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/6857647894]]
+
+[img[http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png]]This work is licensed under [[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License|http://creativecommons.org/licenses/by-nc-sa/3.0/us/]].
+
+
+:: CLUMP OF FUR IN YOUR EARS
+<<set $furinears = true>>
+wow ~ such jeanious
+
+you put the fur in your ears like a champ!
+
+<<set step = $step + 1>>
+[[&laquo; back|FOUR-POSTER BED]]	
+
+
+
+:: KISSES
+you let the HAPPY SHIBE kiss you on the mouth! ew SHIBE BREATH
+
+the HAPPY SHIBE turns into a BEAUTIFUL PERSON
+
+"~ welcome to home ~"
+
+"i am the last of the WERESHIBES"
+
+"wow ~ such legacy"
+
+you have made a new friend for life!!!!!
+
+[[THE END!|CREDITS]]
+
+
+:: VELVET SOFA
+the VELVET SOFA is worn in many places and has the teeth marks of a vicious SHIBE on its legs
+
+<<back>>
 <<set $step = $step + 1>>
 
 
@@ -433,80 +508,5 @@ behind you is the [[FOYER|HOUSE]] of the house
 <<display "BARKING">><<endif>>
 <<endif>>
 
-
-
-:: VELVET SOFA
-the VELVET SOFA is worn in many places and has the teeth marks of a vicious SHIBE on its legs
-
-<<back>>
-<<set $step = $step + 1>>
-
-
-
-:: BEDROOM
-you are inside the BEDROOM. there is a [[FOUR-POSTER BED]] here missing pillows
-
-you are very tired, but you know that it will be very uncomfortable without pillows 
-
-<<if (not $furinears)>>you hear barking
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<if $step gte 30>>
-
-you are so tired but can't sleep because of the barking<<endif>>
-<<endif>><<endif>>
-<<set $step = $step + 1>>
-
-[[&laquo; back|HOUSE]]
-
-
-:: PILLOW FIGHT THE SHIBE
-you pick up your FLUFFY PILLOW and swing it playfully at the SHIBE
-
-the SHIBE is shocked but starts pawing at the air playfully
-
-you have turned the FEROCIOUS SHIBE into a HAPPY SHIBE
-
-[img[http://farm8.staticflickr.com/7209/6857647894_f93da891a6.jpg]]
-
-the HAPPY SHIBE tries to kiss you
-
-[[KISSES]]
-[[NO KISSES]]
-
-
-:: KISSES
-you let the HAPPY SHIBE kiss you on the mouth! ew SHIBE BREATH
-
-the HAPPY SHIBE turns into a BEAUTIFUL PERSON
-
-"~ welcome to home ~"
-
-"i am the last of the WERESHIBES"
-
-"wow ~ such legacy"
-
-you have made a new friend for life!!!!!
-
-[[THE END!|CREDITS]]
-
-
-:: CREDITS
-! BEWAR OF SHIBE
-!! by [[Mx A. Matienzo|http://twitter.com/anarchivist]]
-
-written APRIL 2013 for 1st International Shibe Twine Jam
-
-CLUMP OF FUR picture by [[derfian|http://www.flickr.com/photos/derfian/3121296634]]
-
-PILLOWS picture by [[BarbaraLN|http://www.flickr.com/photos/46097950@N02/6248462654/]]
-
-TREATS picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/5135098566/]]
-
-FEROCIOUS SHIBE picture by [[Alaskan pup|http://www.flickr.com/photos/sandy_01/8121414926/]]
-
-HAPPY SHIBE picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/6857647894]]
-
-[img[http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png]]This work is licensed under [[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License|http://creativecommons.org/licenses/by-nc-sa/3.0/us/]].
 
 
