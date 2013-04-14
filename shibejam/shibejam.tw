@@ -1,57 +1,51 @@
-﻿:: Start
-<<display "OUTSIDE">>
-<<set $inv = []>>
-<<set $furinears = false>>
-<<set $step = 0>>
+﻿:: StoryTitle
+BEWAR OF SHIBE
 
 
-:: OUTSIDE
-you stand outside of a [[HOUSE]]. there is a [[SIGN]] here
-
-<<if (not $furinears)>>you hear barking nearby
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-<<endif>>
-
-<<set $step = $step + 1>>
+:: StoryAuthor
+Mx A. Matienzo
 
 
-:: HOUSE
-you are inside a HOUSE. it is small and smells very musty
+:: Styles [stylesheet]
+body {
+font-family: "Comic Sans", "Comic Sans MS", "Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif; !important;
+font-weight: 800 !important;
+}
+html, body, #header-container, #main-container,	 #footer-container, #main aside {
+background-color: #00FFFF;
+}
 
-<<if $inv.indexOf("CLUMP OF FUR") lt 0>>you see [[CLUMPS OF FUR]] lining the the baseboards<<endif>>
+#title {
+color: #FF6600;
+}
 
-to the left is the [[KITCHEN]]. to the right is the [[BEDROOM]]
+a, nav a, a:hover {
+background: #FF6600;
+color: #fff;
+}	
 
-ahead of you is the [[LIVING ROOM]]. behind you is the door to the [[OUTSIDE]].
+#header-container {
+border-bottom: 20px solid #FF6600;
+}
 
-<<if (not $furinears)>>you hear barking
+#footer-container {
+border-top: 20px solid #FF6600;
+}
 
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-<<endif>>
+#credits {
+display: none !important;
+}
 
-<<set $step = $step + 1>>
-
-
-
-:: KITCHEN
-you are in a rustic KITCHEN with an old noisy refrigerator
-
-<<if $inv.indexOf("SHIBE TREATS") lt 0>>there are small [[SEALED BAGS]] on the counter<<endif>>
-
-<<if (not $furinears)>>you hear barking
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-<<endif>>
-[[&laquo; back|HOUSE]]
-<<set $step = $step + 1>>
-
-
-:: BARKING
-~ woof ~ woof ~ woof ~
+.replacement-in {
+	opacity: 0;
+}
+.replacement {
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+.replacement-out {
+	display:none;
+}
 
 
 :: Macros [script]
@@ -189,28 +183,68 @@ var d=d.fullArgs();d=d.slice(0,d.lastIndexOf(t));d=eval(Wikifier.parse(d));if(d+
 
 
 
-:: SIGN
-the sign is handpainted plywood, loosely attached to a post by a long rusted nail.
+:: BARKING
+~ woof ~ woof ~ woof ~
 
-the sign says ''BEWAR OF SHIBE''.
 
-[[~ back|OUTSIDE]]
+:: NO KISSES
+no kisses for the SHIBE, too bad. you now can leave safely
+
+wow ~ such boring
+
+[[THE END!|CREDITS]]
+
+
+:: Start
+<<display "OUTSIDE">>
+<<set $inv = []>>
+<<set $furinears = false>>
+<<set $step = 0>>
+
+
+:: OUTSIDE
+you stand outside of a [[HOUSE]]. there is a [[SIGN]] here
+
+<<if (not $furinears)>>you hear barking nearby
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<endif>>
+<<endif>>
+
+<<set $step = $step + 1>>
+
+
+:: HOUSE
+you are inside a HOUSE. it is small and smells very musty
+
+<<if $inv.indexOf("CLUMP OF FUR") lt 0>>you see [[CLUMPS OF FUR]] lining the the baseboards<<endif>>
+
+to the left is the [[KITCHEN]]. to the right is the [[BEDROOM]]
+
+ahead of you is the [[LIVING ROOM]]. behind you is the door to the [[OUTSIDE]].
+
+<<if (not $furinears)>>you hear barking
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<endif>>
+<<endif>>
+
 <<set $step = $step + 1>>
 
 
 
-:: CLUMPS OF FUR
-you pick up a clump of fur from the baseboard
+:: KITCHEN
+you are in a rustic KITCHEN with an old noisy refrigerator
 
-[img[http://farm4.staticflickr.com/3078/3121296634_8cc56ec3c1.jpg]]
+<<if $inv.indexOf("SHIBE TREATS") lt 0>>there are small [[SEALED BAGS]] on the counter<<endif>>
 
-<<if $inv.indexOf("CLUMP OF FUR") lt 0>><<set $inv.push("CLUMP OF FUR")>>
+<<if (not $furinears)>>you hear barking
 
-got CLUMP OF FUR<<endif>>
-
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<endif>>
+<<endif>>
 [[&laquo; back|HOUSE]]
 <<set $step = $step + 1>>
-
 
 
 :: SEALED BAGS
@@ -227,21 +261,22 @@ got SHIBE TREATS<<endif>>
 
 
 
-:: BEDROOM
-you are inside the BEDROOM. there is a [[FOUR-POSTER BED]] here missing pillows
+:: FOUR-POSTER BED
+the FOUR-POSTER BED has a down comforter on it and seems very warm and inviting
 
-you are very tired, but you know that it will be very uncomfortable without pillows 
+<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>
 
-<<if (not $furinears)>>you hear barking
+you want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking
 
 <<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<if $step gte 30>>
+<<display "BARKING">><<endif>>
 
-you are so tired but can't sleep because of the barking<<endif>>
-<<endif>><<endif>>
+<<if $inv.indexOf("CLUMP OF FUR") gte 0>>
+you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>
+
 <<set $step = $step + 1>>
+[[&laquo; back|BEDROOM]]
 
-[[&laquo; back|HOUSE]]
 
 
 :: SLEEP
@@ -276,102 +311,35 @@ the SHIBE eats them angrily and growls up at you
 [[&laquo; back|SHIBE ALERT]]
 
 
-:: READ BOOK ABOUT SHIBES
-you open the BOOK ABOUT SHIBES and read the SHIBE EMERGENCY SECTION
+:: SIGN
+the sign is handpainted plywood, loosely attached to a post by a long rusted nail.
 
-FIRST DON'T GIVE THEM TREATS, THEY WILL GET ANGRY
-SECOND, DON'T RUN!
-THIRD, HAPPY SHIBES ARE MADE BY PILLOW FIGHTS!
+the sign says ''BEWAR OF SHIBE''.
 
-[[&laquo; back|SHIBE ALERT]]
-
-
-:: Styles [stylesheet]
-body {
-font-family: "Comic Sans", "Comic Sans MS", "Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif; !important;
-font-weight: 800 !important;
-}
-html, body, #header-container, #main-container,	 #footer-container, #main aside {
-background-color: #00FFFF;
-}
-
-#title {
-color: #FF6600;
-}
-
-a, nav a, a:hover {
-background: #FF6600;
-color: #fff;
-}	
-
-#header-container {
-border-bottom: 20px solid #FF6600;
-}
-
-#footer-container {
-border-top: 20px solid #FF6600;
-}
-
-#credits {
-display: none !important;
-}
-
-.replacement-in {
-	opacity: 0;
-}
-.replacement {
-	transition: 1s;
-	-webkit-transition: 1s;
-}
-.replacement-out {
-	display:none;
-}
-
-
-:: StoryTitle
-BEWAR OF SHIBE
-
-
-:: LIVING ROOM
-you are in a LIVING ROOM. there is a [[VELVET SOFA]] that is covered in fur
-
-to your left is a [[BOOKCASE]] filled with unusual volumes
-
-to your right is a [[LOVE SEAT]] covered in pillows
-
-behind you is the [[FOYER|HOUSE]] of the house
-
-<<if (not $furinears)>>you hear barking
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-<<endif>>
-
-
-
-:: VELVET SOFA
-the VELVET SOFA is worn in many places and has the teeth marks of a vicious SHIBE on its legs
-
-<<back>>
+[[~ back|OUTSIDE]]
 <<set $step = $step + 1>>
 
 
 
-:: FOUR-POSTER BED
-the FOUR-POSTER BED has a down comforter on it and seems very warm and inviting
+:: LOVE SEAT
+this is a well used leather LOVE SEAT. the pile of [[PILLOWS]] make it impossible for you to sit down comfortably
 
-<<if $inv.indexOf("FLUFFY PILLOW") gte 0>>you think the bed would be very comfortable with your nice FLUFFY PILLOW and place it on the bed<<endif>>
-
-you want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear barking
-
-<<display "BARKING">><<if $step gte 15>>
-<<display "BARKING">><<endif>>
-
-<<if $inv.indexOf("CLUMP OF FUR") gte 0>>
-you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>
-
+[[&laquo; back|LIVING ROOM]]
 <<set $step = $step + 1>>
-[[&laquo; back|BEDROOM]]
+
+
+
+:: CLUMPS OF FUR
+you pick up a clump of fur from the baseboard
+
+[img[http://farm4.staticflickr.com/3078/3121296634_8cc56ec3c1.jpg]]
+
+<<if $inv.indexOf("CLUMP OF FUR") lt 0>><<set $inv.push("CLUMP OF FUR")>>
+
+got CLUMP OF FUR<<endif>>
+
+[[&laquo; back|HOUSE]]
+<<set $step = $step + 1>>
 
 
 
@@ -416,45 +384,14 @@ as you faint you realize OH NO this was a WERESHIBE; you are doomed to live thro
 
 
 
-:: CREDITS
-! BEWAR OF SHIBE
-!! by [[Mx A. Matienzo|http://twitter.com/anarchivist]]
+:: READ BOOK ABOUT SHIBES
+you open the BOOK ABOUT SHIBES and read the SHIBE EMERGENCY SECTION
 
-written APRIL 2013 for 1st International Shibe Twine Jam
+FIRST DON'T GIVE THEM TREATS, THEY WILL GET ANGRY
+SECOND, DON'T RUN!
+THIRD, HAPPY SHIBES ARE MADE BY PILLOW FIGHTS!
 
-CLUMP OF FUR picture by [[derfian|http://www.flickr.com/photos/derfian/3121296634]]
-
-PILLOWS picture by [[BarbaraLN|http://www.flickr.com/photos/46097950@N02/6248462654/]]
-
-TREATS picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/5135098566/]]
-
-FEROCIOUS SHIBE picture by [[Alaskan pup|http://www.flickr.com/photos/sandy_01/8121414926/]]
-
-HAPPY SHIBE picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/6857647894]]
-
-[img[http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png]]This work is licensed under [[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License|http://creativecommons.org/licenses/by-nc-sa/3.0/us/]].
-
-
-:: StoryAuthor
-Mx A. Matienzo
-
-
-:: LOVE SEAT
-this is a well used leather LOVE SEAT. the pile of [[PILLOWS]] make it impossible for you to sit down comfortably
-
-[[&laquo; back|LIVING ROOM]]
-<<set $step = $step + 1>>
-
-
-
-:: BOOKCASE
-you see a number of rare volumes on ferocious animals. the book that captivates your intention is ~MASTERING THE SHIBE CONSCIOUSNESS~.<<if $inv.indexOf("BOOK ABOUT SHIBES") lt 0>><<set $inv.push("BOOK ABOUT SHIBES")>>
-
-got BOOK ABOUT SHIBES<<endif>>
-
-[[&laquo; back|LIVING ROOM]]
-<<set $step = $step + 1>>
-
+[[&laquo; back|SHIBE ALERT]]
 
 
 :: PILLOWS
@@ -469,6 +406,73 @@ got FLUFFY PILLOW<<endif>>
 [[&laquo; back|LOVE SEAT]]
 <<set $step = $step + 1>>
 
+
+
+:: BOOKCASE
+you see a number of rare volumes on ferocious animals. the book that captivates your intention is ~MASTERING THE SHIBE CONSCIOUSNESS~.<<if $inv.indexOf("BOOK ABOUT SHIBES") lt 0>><<set $inv.push("BOOK ABOUT SHIBES")>>
+
+got BOOK ABOUT SHIBES<<endif>>
+
+[[&laquo; back|LIVING ROOM]]
+<<set $step = $step + 1>>
+
+
+
+:: LIVING ROOM
+you are in a LIVING ROOM. there is a [[VELVET SOFA]] that is covered in fur
+
+to your left is a [[BOOKCASE]] filled with unusual volumes
+
+to your right is a [[LOVE SEAT]] covered in pillows
+
+behind you is the [[FOYER|HOUSE]] of the house
+
+<<if (not $furinears)>>you hear barking
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<endif>>
+<<endif>>
+
+
+
+:: VELVET SOFA
+the VELVET SOFA is worn in many places and has the teeth marks of a vicious SHIBE on its legs
+
+<<back>>
+<<set $step = $step + 1>>
+
+
+
+:: BEDROOM
+you are inside the BEDROOM. there is a [[FOUR-POSTER BED]] here missing pillows
+
+you are very tired, but you know that it will be very uncomfortable without pillows 
+
+<<if (not $furinears)>>you hear barking
+
+<<display "BARKING">><<if $step gte 15>>
+<<display "BARKING">><<if $step gte 30>>
+
+you are so tired but can't sleep because of the barking<<endif>>
+<<endif>><<endif>>
+<<set $step = $step + 1>>
+
+[[&laquo; back|HOUSE]]
+
+
+:: PILLOW FIGHT THE SHIBE
+you pick up your FLUFFY PILLOW and swing it playfully at the SHIBE
+
+the SHIBE is shocked but starts pawing at the air playfully
+
+you have turned the FEROCIOUS SHIBE into a HAPPY SHIBE
+
+[img[http://farm8.staticflickr.com/7209/6857647894_f93da891a6.jpg]]
+
+the HAPPY SHIBE tries to kiss you
+
+[[KISSES]]
+[[NO KISSES]]
 
 
 :: KISSES
@@ -487,26 +491,22 @@ you have made a new friend for life!!!!!
 [[THE END!|CREDITS]]
 
 
-:: PILLOW FIGHT THE SHIBE
-you pick up your FLUFFY PILLOW and swing it playfully at the SHIBE
+:: CREDITS
+! BEWAR OF SHIBE
+!! by [[Mx A. Matienzo|http://twitter.com/anarchivist]]
 
-the SHIBE is shocked but starts pawing at the air playfully
+written APRIL 2013 for 1st International Shibe Twine Jam
 
-you have turned the FEROCIOUS SHIBE into a HAPPY SHIBE
+CLUMP OF FUR picture by [[derfian|http://www.flickr.com/photos/derfian/3121296634]]
 
-[img[http://farm8.staticflickr.com/7209/6857647894_f93da891a6.jpg]]
+PILLOWS picture by [[BarbaraLN|http://www.flickr.com/photos/46097950@N02/6248462654/]]
 
-the HAPPY SHIBE tries to kiss you
+TREATS picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/5135098566/]]
 
-[[KISSES]]
-[[NO KISSES]]
+FEROCIOUS SHIBE picture by [[Alaskan pup|http://www.flickr.com/photos/sandy_01/8121414926/]]
 
+HAPPY SHIBE picture by [[_tar0_|http://www.flickr.com/photos/_tar0_/6857647894]]
 
-:: NO KISSES
-no kisses for the SHIBE, too bad. you now can leave safely
-
-wow ~ such boring
-
-[[THE END!|CREDITS]]
+[img[http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png]]This work is licensed under [[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License|http://creativecommons.org/licenses/by-nc-sa/3.0/us/]].
 
 
