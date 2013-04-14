@@ -247,9 +247,9 @@ you are so tired but can't sleep because of the barking<<endif>>
 :: SLEEP
 you try to sleep
 
-<<if not $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow
+<<if $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow
 
-<<back>><<endif>>
+[[&laquo; back|FOUR-POSTER BED]]<<else>>
 <<if $furinears>>
 you drift off into a deep slumber
 
@@ -261,7 +261,7 @@ you drift off into a deep slumber
 [[&laquo; back|FOUR-POSTER BED]]
 <<endtimedreplace>>
 <<endif>>
-
+<<endif>>
 <<set $step = $step + 1>>
 
 
@@ -367,7 +367,8 @@ you want to get into bed and [[SLEEP]] <<if (not $furinears)>> but you hear bark
 <<display "BARKING">><<if $step gte 15>>
 <<display "BARKING">><<endif>>
 
-you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>>
+<<if $inv.indexOf("CLUMP OF FUR") gte 0>>
+you consider putting the [[CLUMP OF FUR IN YOUR EARS]]<<endif>><<endif>>
 
 <<set $step = $step + 1>>
 [[&laquo; back|BEDROOM]]

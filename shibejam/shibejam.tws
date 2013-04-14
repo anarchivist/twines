@@ -1,7 +1,7 @@
 (dp0
 S'buildDestination'
 p1
-V/Users/mam54/Documents/Code/git/shibejam/index.html
+V/Users/mam54/Documents/Code/git/matienzo.org-twine/shibejam/index.html
 p2
 sS'saveDestination'
 p3
@@ -549,7 +549,7 @@ VBOOKCASE
 p174
 sbsa(dp175
 g12
-I01
+I00
 sg13
 (lp176
 F1270.0
@@ -660,7 +660,7 @@ VSEALED BAGS
 p207
 sbsa(dp208
 g12
-I00
+I01
 sg13
 (lp209
 F1550.0
@@ -671,7 +671,7 @@ Tiddler
 p210
 (dp211
 g18
-Vyou try to sleep\u000a\u000a<<if not $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow\u000a\u000a<<back>><<endif>>\u000a<<if $furinears>>\u000ayou drift off into a deep slumber\u000a\u000a<<timedreplace 8>>wow ~ such dreams<<endtimedreplace>>\u000a\u000a<<timedgoto "SHIBE ALERT" 20>><<else>>\u000a<<timedreplace 7>>you can't fall asleep, you hear barking \u000a<<display "BARKING">>\u000a[[&laquo; back|FOUR-POSTER BED]]\u000a<<endtimedreplace>>\u000a<<endif>>\u000a\u000a<<set $step = $step + 1>>\u000a
+Vyou try to sleep\u000a\u000a<<if $inv.indexOf("FLUFFY PILLOW") lt 0>>you can't fall asleep, you don't have a pillow\u000a\u000a[[&laquo; back|FOUR-POSTER BED]]<<else>>\u000a<<if $furinears>>\u000ayou drift off into a deep slumber\u000a\u000a<<timedreplace 8>>wow ~ such dreams<<endtimedreplace>>\u000a\u000a<<timedgoto "SHIBE ALERT" 20>><<else>>\u000a<<timedreplace 7>>you can't fall asleep, you hear barking \u000a<<display "BARKING">>\u000a[[&laquo; back|FOUR-POSTER BED]]\u000a<<endtimedreplace>>\u000a<<endif>>\u000a<<endif>>\u000a<<set $step = $step + 1>>\u000a
 p212
 sg20
 (lp213
